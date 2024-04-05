@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Empresa;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Faker\Factory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -32,24 +33,25 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $jardin->empresas()->attach(Empresa::where('slug', 'ajn')->first());
-
+        /*
         $trasat = User::factory()->create([
             'name' => 'M2',
             'email' => 'm2@email.com',
         ]);
         $trasat->empresas()->attach(Empresa::where('slug', 'm2')->first());
-
+        */
         $multicompany = User::factory()->create([
             'name' => 'Admin',
             'email' => 'adm@email.com',
         ]);
 
-        $multicompany->empresas()->attach(Empresa::where('slug', 'm2')->first());
+        //$multicompany->empresas()->attach(Empresa::where('slug', 'm2')->first());
         $multicompany->empresas()->attach(Empresa::where('slug', 'ajn')->first());
 
+        /*
         $this->call(
             TecnicoSeeder::class
-        );
+        );*/
 
     }
 }
