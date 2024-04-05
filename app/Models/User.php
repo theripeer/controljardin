@@ -18,7 +18,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable implements HasTenants
 {
     use HasApiTokens, HasFactory, Notifiable;
-
+    /*
     public function canAccessPanel(Panel $panel): bool // Corrected parameter type
     {
         if ($panel->getId() === 'tecnicos') {
@@ -26,7 +26,7 @@ class User extends Authenticatable implements HasTenants
         }
  
         return true;
-    }
+    }*/
 
     /**
      * The attributes that are mass assignable.
