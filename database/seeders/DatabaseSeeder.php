@@ -31,12 +31,11 @@ class DatabaseSeeder extends Seeder
             TecnicoSeeder::class
         );
 
-        $jardin = User::factory()->create([
-            'name' => 'AJN',
-            'email' => 'jardin@email.com',
-        ]);
+        $this->call(
+            EspecieSeeder::class
+        );
 
-        $jardin->empresas()->attach(Empresa::where('slug', 'ajn')->first());
+        
         /*
         $trasat = User::factory()->create([
             'name' => 'M2',
@@ -44,13 +43,14 @@ class DatabaseSeeder extends Seeder
         ]);
         $trasat->empresas()->attach(Empresa::where('slug', 'm2')->first());
         */
+        /*
         $multicompany = User::factory()->create([
             'name' => 'Admin',
             'email' => 'adm@email.com',
-        ]);
+        ]);*/
 
         //$multicompany->empresas()->attach(Empresa::where('slug', 'm2')->first());
-        $multicompany->empresas()->attach(Empresa::where('slug', 'ajn')->first());
+        //$multicompany->empresas()->attach(Empresa::where('slug', 'ajn')->first());
 
         /*
         */
