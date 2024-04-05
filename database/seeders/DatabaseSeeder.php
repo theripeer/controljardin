@@ -27,6 +27,10 @@ class DatabaseSeeder extends Seeder
             EmpresaSeeder::class,
         ]);
 
+        $this->call(
+            TecnicoSeeder::class
+        );
+
         $jardin = User::factory()->create([
             'name' => 'AJN',
             'email' => 'jardin@email.com',
@@ -49,9 +53,7 @@ class DatabaseSeeder extends Seeder
         $multicompany->empresas()->attach(Empresa::where('slug', 'ajn')->first());
 
         /*
-        $this->call(
-            TecnicoSeeder::class
-        );*/
+        */
 
     }
 }
