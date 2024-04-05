@@ -21,13 +21,13 @@ class User extends Authenticatable implements HasTenants
 
     public function canAccessPanel(Panel $panel): bool // Corrected parameter type
     {
-        if ($panel->getId() === 'admin') {
+        if ($panel->getId() === 'tecnicos') {
             return str_ends_with($this->email, '@yourdomain.com') && $this->hasVerifiedEmail();
         }
  
         return true;
     }
-    
+
     /**
      * The attributes that are mass assignable.
      *
